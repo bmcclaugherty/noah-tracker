@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "baby-tracker-4068b": {
+      "hosting": {
+        "noah-tracker": [
+          "baby-tracker-4068b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "baby-tracker-4068b"
+  }
+}
