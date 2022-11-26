@@ -1,5 +1,5 @@
 export interface Activity {
     id?: string;
-    activity: string;
+    activity: number;
     datetime: string;
 }

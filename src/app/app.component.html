@@ -3,20 +3,12 @@
   <span>Noah Tracker</span>
 </mat-toolbar>
 
-<!-- <mat-list>
-  <mat-list-item *ngFor="let item of items | async">
-    <h3 matListItemTitle>{{item.activity}} 💩</h3>
-    <p matLine>something else</p>
-  </mat-list-item>
-<mat-list> -->
-
 <mat-list>
-  <!-- <div mat-subheader>Folders</div> -->
   <mat-list-item *ngFor="let a of activity | async">
-    <mat-icon svgIcon="poo" mat-list-icon></mat-icon>
-    <mat-icon mat-list-icon>water_drop</mat-icon>
-    <div mat-line>{{a.activity}}</div>
-    <div mat-line>time: {{a.datetime.toDate() | date:'MM/dd h:mm a'}} </div>
+    <mat-icon svgIcon="poo" mat-list-icon *ngIf="a.activity === 3 || a.activity === 2"></mat-icon>
+    <mat-icon mat-list-icon *ngIf="a.activity === 3 || a.activity === 1">water_drop</mat-icon>
+    <mat-icon mat-list-icon *ngIf="a.activity === 4">restaurant</mat-icon>
+    <div mat-line>{{a.datetime.toDate() | dateAgo }} </div>
     <mat-divider></mat-divider>
   </mat-list-item>
   

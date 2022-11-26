@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card'; 
 import { HttpClientModule } from "@angular/common/http";
+import { DateAgoPipe } from './pipes/date-ago.pipe';
 @NgModule({
   imports: [
     BrowserModule,
@@ -22,7 +23,7 @@ import { HttpClientModule } from "@angular/common/http";
     MatCardModule,
     HttpClientModule
   ],
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, DateAgoPipe ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
