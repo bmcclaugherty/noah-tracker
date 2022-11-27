@@ -3,7 +3,7 @@ import { AngularFirestore, DocumentChangeAction } from '@angular/fire/compat/fir
 import { Observable } from 'rxjs';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { AddEventDialogComponent } from './add-event-dialog/add-event-dialog.component';
 @Component({
   selector: 'app-root',

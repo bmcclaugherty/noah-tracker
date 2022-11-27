@@ -27,7 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     MatButtonModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   declarations: [ AppComponent, DateAgoPipe, AddEventDialogComponent ],
   bootstrap: [ AppComponent ]
