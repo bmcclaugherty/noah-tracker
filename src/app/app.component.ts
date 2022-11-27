@@ -17,15 +17,15 @@ export class AppComponent implements OnInit {
 
   constructor(
     firestore: AngularFirestore, private matIconRegistry: MatIconRegistry, 
-    private domSanitizer: DomSanitizer, public dialog: MatDialog) {
+      private domSanitizer: DomSanitizer, public dialog: MatDialog) {
 
+    this.activity = firestore.collection('activity', ref => ref.orderBy('datetime', 'desc')).valueChanges();
+    
     this.matIconRegistry.addSvgIcon(
       `poo`,
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/poo.svg")
     );
 
-    this.activity = firestore.collection('activity', ref => ref.orderBy('datetime', 'desc')).valueChanges();
-    this.activity.forEach(val => (console.log(val)));
   }
 
   ngOnInit(): void {
