@@ -1,27 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/compat/firestore';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
+import {MatDialog} from '@angular/material/dialog';
+import { AddEventDialogComponent } from './add-event-dialog/add-event-dialog.component';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css']
 })
 export class AppComponent implements OnInit {
+  
   activity: Observable<any[]>;
   interval: any;
-  something: any; 
 
-  constructor(firestore: AngularFirestore, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
-    this.activity = firestore.collection('activity', ref => ref.orderBy('datetime', 'desc')).valueChanges();
+  constructor(
+    firestore: AngularFirestore, private matIconRegistry: MatIconRegistry, 
+    private domSanitizer: DomSanitizer, public dialog: MatDialog) {
 
-
-    this.activity.forEach(val => (console.log(val)));
     this.matIconRegistry.addSvgIcon(
       `poo`,
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/poo.svg")
     );
+
+    this.activity = firestore.collection('activity', ref => ref.orderBy('datetime', 'desc')).valueChanges();
+    this.activity.forEach(val => (console.log(val)));
   }
 
   ngOnInit(): void {
@@ -30,5 +34,9 @@ export class AppComponent implements OnInit {
 
   ngOnDestroy() {
     clearInterval(this.interval);
+  }
+
+  openDialog() {
+    this.dialog.open(AddEventDialogComponent);
   }
 }

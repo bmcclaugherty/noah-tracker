@@ -11,6 +11,10 @@
     <div mat-line>{{a.datetime.toDate() | dateAgo }} </div>
     <mat-divider></mat-divider>
   </mat-list-item>
-  
 </mat-list>
   
+<div class="example-button-container">
+  <button (click)="openDialog()" mat-fab color="primary" class="fab-button">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
