@@ -1,0 +1,75 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "noah tracker",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "poop",
+          "slots": [],
+          "samples": [
+            "record a poopy diaper",
+            "record a diaper with poop",
+            "log a poopy diaper",
+            "log a diaper with poop"
+          ]
+        },
+        {
+          "name": "pee",
+          "slots": [],
+          "samples": [
+            "log a pee",
+            "record a pee",
+            "record a pee diaper",
+            "log a pee diaper"
+          ]
+        },
+        {
+          "name": "both",
+          "slots": [],
+          "samples": [
+            "record a pee and poop diaper",
+            "record a poop and pee diaper",
+            "log a pee and poop",
+            "log a poop and pee",
+            "log a poop and pee diaper"
+          ]
+        }
+      ],
+      "types": []
+    }
+  },
+  "version": "6"
+}
